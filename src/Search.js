@@ -8,7 +8,7 @@ export default function Search() {
   const [definition, setDefinition] = useState(null);
 
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data[0]);
     setDefinition(response.data[0]);
   }
 
