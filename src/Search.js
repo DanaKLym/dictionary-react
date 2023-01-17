@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Output from "./Output";
 
 export default function Search() {
 
   const [word, setWord] = useState("");
-  const [definition, setDefinition] = useState("");
+  const [definition, setDefinition] = useState(null);
 
   function handleResponse(response) {
     console.log(response);
-    setDefinition(response.data[0].meanings[0].definitions[0].definition);
+    setDefinition(response.data[0]);
   }
 
   function handleDictionary() {
@@ -32,7 +33,7 @@ setWord(event.target.value);
       <input type="text" placeholder='Enter the word' autoFocus onChange={handleWordChange}/>
       <input type="submit" value="Search"/>
     </form>
-    <div className="output">{definition}</div>
+    <Output output={definition} />
     </div>
     );
 }
