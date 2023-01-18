@@ -1,17 +1,30 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
+import "./Phonetics.css";
 
 export default function Phonetics(props){
 
-    const audio = new Audio(props.phonetics.audio);
+    let sound = props.phonetics.audio;
+    let transcription = props.phonetics.text;
+
+    const audio = new Audio(sound);
 
     function handleSound() {
         audio.play();
     }
 
-    return (
-        <div>
-            <button type="button" onClick={handleSound}>Click on me</button>
-            <h4>{props.phonetics.text}</h4>
-        </div>
-    );
+    if (sound !== "" & transcription !== "") {
+        return (
+            <div>
+                <button type="button" className="phoneticsIcon" onClick={handleSound}>
+                <FontAwesomeIcon icon={faVolumeHigh} />
+                </button>
+                <h4>{transcription}</h4>
+            </div>
+        );
+    } else {
+        return null;
+    }
+
 }

@@ -1,0 +1,8 @@
+.phoneticsIcon {
+    background-color: inherit;
+    border: none;
+    transition: 400ms all ease-in-out;
+}
+
+.phoneticsIcon:hover {
+    scale: 1.1;}
