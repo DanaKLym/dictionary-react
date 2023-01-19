@@ -6,7 +6,7 @@ export default function Output(props) {
 
     if(props.output) {
     return (
-        <div className="output">
+        <div className="output text-start">
             <h2>{props.output.word}</h2>
             <h3>{props.output.phonetics.map(function(phonetics, index){
                 return (

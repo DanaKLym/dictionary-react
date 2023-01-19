@@ -29,7 +29,7 @@ setWord(event.target.value);
   }
 
     return (
-      <div className="container">
+      <div className="container m-5">
         <h1>Dictionary</h1>
       <form onSubmit={handleSubmit}>
       <input type="text" placeholder='Enter the word...' autoFocus onChange={handleWordChange}/>
