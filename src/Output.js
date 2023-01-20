@@ -1,30 +1,30 @@
 import React from "react";
-import Phonetics from "./Phonetics";
-import Meanings from "./Meanings";
+//import Example from "./Example"; <Example example={props.output}/>;
+import Meaning from "./Meanings";
+import Pronunciation from "./Pronunciation";
 
 export default function Output(props) {
-
     if(props.output) {
-    return (
-        <div className="output text-start">
-            <h2>{props.output.word}</h2>
-            <h3>{props.output.phonetics.map(function(phonetics, index){
-                return (
-                    <div key={index}>
-                        <Phonetics phonetics={phonetics} />
-                    </div>
-                );
-            })}</h3>
-            <div className="meanings">
-                {props.output.meanings.map(function(meanings, index){
+        return (
+            <div className="output">
+                <h2>{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
+                <Pronunciation pronunciation={props.output} />
+                
+                <div>
+                {props.output.map(function(description, index) {
                     return (
-                    <div key={index}>
-                        <Meanings meanings={meanings}/>
-                    </div>);
+                        <div key={index}>
+                            <h3 className="headword"><em>{description.hwi.hw}</em></h3>
+                            <div className="partOfSpeech"><strong>{description.fl}</strong></div>
+                            <Meaning description={description} />
+                        </div>
+                    );
                 })}
+                </div>
             </div>
-        </div>
-    );} else {
+        );
+    } else {
         return null;
     }
+
 }

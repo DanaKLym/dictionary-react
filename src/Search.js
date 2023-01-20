@@ -2,40 +2,42 @@ import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
 
+/* `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=28e2d780-8e37-4805-a70e-8a22e8bc93b9`
+*/
 
 export default function Search() {
 
-  const [word, setWord] = useState("");
-  const [definition, setDefinition] = useState(null);
+    const [word, setWord] = useState("");
+    const [definition, setDefinition] = useState(null);
 
-  function handleResponse(response) {
-    console.log(response.data[0]);
-    setDefinition(response.data[0]);
-  }
+    function handleResponse(response) {
+        console.log(response);
+        setDefinition(response.data)
+    }
 
-  function handleDictionary() {
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    function handleDictionary() {
+        let apiUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=28e2d780-8e37-4805-a70e-8a22e8bc93b9`
 
-    axios.get(apiUrl).then(handleResponse);
-  }
+        axios.get(apiUrl).then(handleResponse);
+    }
 
-  function handleSubmit(event) {
-event.preventDefault();
-handleDictionary();
-  };
+    function handleSubmit(event) {
+        event.preventDefault();
+        handleDictionary();
+    }
 
-  function handleWordChange(event) {
-setWord(event.target.value);
-  }
+    function handleWordChange(event) {
+        setWord(event.target.value);
+    }
 
     return (
-      <div className="container m-5">
-        <h1>Dictionary</h1>
-      <form onSubmit={handleSubmit}>
-      <input type="text" placeholder='Enter the word...' autoFocus onChange={handleWordChange}/>
-      <input type="submit" value="Search"/>
-    </form>
-    <Output output={definition} />
-    </div>
+        <div className="container m-5">
+            <h1>Dictionary</h1>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder="Type the word..." autoFocus onChange={handleWordChange}/>
+                <input type="submit" value="Search"/>
+            </form>
+            <div> <Output output={definition} /></div>
+        </div>
     );
 }
