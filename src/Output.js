@@ -1,14 +1,20 @@
+// <Pronunciation pronunciation={props.output} />
+// <Transcription transcription={props.output} />
+// import Headword from "./Headword";
+// import NewKeyWord from "./NewKeyWord";
 import React from "react";
 import Meaning from "./Meanings";
 import Pronunciation from "./Pronunciation";
+import Transcription from "./Transcription";
+
 
 export default function Output(props) {
     if(props.output[0].meta) {
         return (
             <div className="output">
-                <h2>{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
+                 <h2>{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
                 <Pronunciation pronunciation={props.output} />
-                <div>[{props.output[0].hwi.prs[0].mw}]</div>
+                <Transcription transcription={props.output} />
                 <div>
                 {props.output.map(function(description, index) {
                     return (
@@ -23,7 +29,7 @@ export default function Output(props) {
             </div>
         );
     } else {
-        return <h2> Opps, something went wrong, did you mean... {props.output[0]}?</h2>;
+        return <h2> Opps, something went wrong, please, type the word again</h2>;
     }
 
 }

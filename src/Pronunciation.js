@@ -5,20 +5,28 @@ import "./Phonetics.css"
 
 export default function Pronunciation(props) {
 
-    let keyWord = props.pronunciation[0].hwi.prs[0].sound.audio;
-    const audioUrl = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${keyWord.charAt()}/${keyWord}.mp3`;
-
-    const audio = new Audio(audioUrl);
-
     function hadleSound() {
-        audio.play();
+        let keyWord = props.pronunciation[0].hwi.prs[0].sound.audio;
+        const audioUrl = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${keyWord.charAt()}/${keyWord}.mp3`;
+        const audio = new Audio(audioUrl);
+
+        if (audioUrl) {
+           return audio.play();
+        } else {
+            return null;
+        }
     }
 
-    return (
-        <div>
-        <button type="button" className="phoneticsIcon" onClick={hadleSound}>
-        <FontAwesomeIcon icon={faVolumeHigh} />
-        </button>
-        </div>
-    );
+    if (props.pronunciation[0].hwi.prs != null){
+        return (
+            <div>
+            <button type="button" className="phoneticsIcon" onClick={hadleSound}>
+            <FontAwesomeIcon icon={faVolumeHigh} />
+            </button>
+            </div>
+        );
+    } else {
+        return null;
+    }
+
 }
