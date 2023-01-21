@@ -2,19 +2,22 @@ import React from "react";
 
 export default function Example(props) {
 
-    if (props.example) {
-        return (
-            <div>
-                <h3>{props.example.map(function(example, index) {
-                    return (
-                        <ul key={index}>
-                            <li>{example.quotes}</li>
-                        </ul>
-                    );
-                })}</h3>
-            </div>
-        );
+     if (props.example.quotes) {
+            return (
+                <div>
+                    <br/> 
+                    <strong>Example:</strong>
+                {props.example.quotes.map(function(quotes, index) {
+                return (
+                    <div key={index}>
+                    <br/>
+                        {quotes.t.replace(`{qword}`, ``).replace(`{/qword}`, ``)}
+                    </div>
+                        );
+                    })}
+                </div>);
     } else {
         return null;
-    }
+           }
+                
 }

@@ -1,15 +1,14 @@
 import React from "react";
-//import Example from "./Example"; <Example example={props.output}/>;
 import Meaning from "./Meanings";
 import Pronunciation from "./Pronunciation";
 
 export default function Output(props) {
-    if(props.output) {
+    if(props.output[0].meta) {
         return (
             <div className="output">
                 <h2>{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
                 <Pronunciation pronunciation={props.output} />
-                
+                <div>[{props.output[0].hwi.prs[0].mw}]</div>
                 <div>
                 {props.output.map(function(description, index) {
                     return (
@@ -24,7 +23,7 @@ export default function Output(props) {
             </div>
         );
     } else {
-        return null;
+        return <h2> Opps, something went wrong, did you mean... {props.output[0]}?</h2>;
     }
 
 }

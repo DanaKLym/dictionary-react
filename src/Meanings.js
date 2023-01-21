@@ -1,4 +1,5 @@
 import React from "react";
+import Example from "./Example";
 
 export default function Meaning(props) {
     return (
@@ -9,6 +10,7 @@ export default function Meaning(props) {
                 </div>
             );
         })}
+        <Example example={props.description} />
         <hr/>
         </div>
     );

@@ -11,7 +11,7 @@ export default function Search() {
     const [definition, setDefinition] = useState(null);
 
     function handleResponse(response) {
-        console.log(response);
+        console.log(response.data);
         setDefinition(response.data)
     }
 
@@ -37,7 +37,9 @@ export default function Search() {
                 <input type="text" placeholder="Type the word..." autoFocus onChange={handleWordChange}/>
                 <input type="submit" value="Search"/>
             </form>
-            <div> <Output output={definition} /></div>
+            <div> 
+               {definition != null ?  <Output output={definition} /> : " "}
+            </div>
         </div>
     );
 }
