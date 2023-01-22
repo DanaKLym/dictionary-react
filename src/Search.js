@@ -31,7 +31,7 @@ export default function Search() {
     }
 
     return (
-        <div className="container m-5">
+        <div className="container my-5">
             <h1>Dictionary</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Type the word..." autoFocus onChange={handleWordChange}/>
