@@ -36,10 +36,10 @@ export default function Output(props) {
             </div>
         );
     } else {
-        return (<h2> Opps, something went wrong, did you mean one of these...? {props.output.map(function(index, typo) {
+        return (<div className="my-3"><strong>Opps, something went wrong, did you mean one of these ...? </strong> <div className="my-3">{props.output.map(function(typo, index) {
             return (
-                <div key={index}>{typo}</div>
+                <div key={index} >{typo}</div>
             );
-        })}</h2>);
+        })}</div></div>);
     }
 }

@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
 
-/* `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=28e2d780-8e37-4805-a70e-8a22e8bc93b9`
-*/
-
 export default function Search() {
 
     const [word, setWord] = useState("");
