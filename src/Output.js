@@ -6,7 +6,7 @@ import Transcription from "./Transcription";
 
 
 export default function Output(props) {
-    if (props.output.length === 0) {
+    if (props.output.length <= 0) {
         return (
         <h2>Opps, something went wrong, please, type the word again</h2>);
     } else if (props.output[0].meta) {
@@ -38,7 +38,7 @@ export default function Output(props) {
     } else {
         return (<div className="my-3"><strong>Opps, something went wrong, did you mean one of these ...? </strong> <div className="my-3">{props.output.map(function(typo, index) {
             return (
-                <div key={index} >{typo}</div>
+                <div key={index}>{typo}</div>
             );
         })}</div></div>);
     }

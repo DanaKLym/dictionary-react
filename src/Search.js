@@ -1,11 +1,15 @@
+// {definition != null ?  <Output output={definition} /> : " "}
+
 import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
+import Photos from "./Photos";
 
 export default function Search() {
 
     const [word, setWord] = useState("");
     const [definition, setDefinition] = useState(null);
+    const [photos, setPhotos] = useState(null);
 
     function handleResponse(response) {
         console.log(response.data);
@@ -18,9 +22,23 @@ export default function Search() {
         axios.get(apiUrl).then(handleResponse);
     }
 
+    function handlePexelsResponse(response) {
+        console.log(response);
+        setPhotos(response.data.photos)
+    }
+
+    function handlePhotos() {
+        let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
+        let pexelsApiKey = `563492ad6f91700001000001bc5440db709f491fb84aa5d279e748d5`;
+        let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+
+        axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         handleDictionary();
+        handlePhotos();
     }
 
     function handleWordChange(event) {
@@ -37,6 +55,7 @@ export default function Search() {
             <div> 
                {definition != null ?  <Output output={definition} /> : " "}
             </div>
+            <Photos photos={photos} />
         </div>
     );
 }
