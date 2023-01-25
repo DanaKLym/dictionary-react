@@ -19,7 +19,7 @@ export default function Pronunciation(props) {
 
     if (props.pronunciation[0].hwi.prs != null){
         return (
-            <div>
+            <div className="mx-3">
             <button type="button" className="phoneticsIcon" onClick={hadleSound}>
             <FontAwesomeIcon icon={faVolumeHigh} />
             </button>

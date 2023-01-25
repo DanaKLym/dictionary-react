@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
 import Photos from "./Photos";
+import "./Search.css"
 
 export default function Search() {
 
@@ -23,7 +24,6 @@ export default function Search() {
     }
 
     function handlePexelsResponse(response) {
-        console.log(response);
         setPhotos(response.data.photos)
     }
 
@@ -46,9 +46,9 @@ export default function Search() {
     }
 
     return (
-        <div className="container my-5">
-            <h1>Dictionary</h1>
-            <form onSubmit={handleSubmit}>
+        <div className="container my-5 py-3">
+            <h1 className="my-2">D:ct:onary</h1>
+            <form onSubmit={handleSubmit} className="my-3">
                 <input type="text" placeholder="Type the word..." autoFocus onChange={handleWordChange}/>
                 <input type="submit" value="Search"/>
             </form>
