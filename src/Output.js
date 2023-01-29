@@ -1,20 +1,9 @@
-/*
-<div className="my-3">Opps, something went wrong, did you mean ... <strong>{props.output[0]}?</strong></div>
-
-else {
-        return (<div className="my-3">Opps, something went wrong, did you mean ... ?<div className="row p-3">
-            {Array.isArray(props.output) ? props.output.map(function(typo, index){
-                    return (
-                        <div key={index} className="col-sm-3 py-2">{typo}</div>
-                    );
-            }) : null}</div></div>);
-    }
-*/
 import React from "react";
 import Meaning from "./Meanings";
 import Warning from "./Warning";
 import Pronunciation from "./Pronunciation";
 import Transcription from "./Transcription";
+import TypoError from "./TypoError";
 
 
 export default function Output(props) {
@@ -50,11 +39,6 @@ export default function Output(props) {
             </div>
         );
     } else {
-        return (<div className="my-3">Opps, something went wrong, did you mean ... ?<div className="row p-3">
-            {Array.isArray(props.output) ? props.output.map(function(typo, index){
-                    return (
-                        <div key={index} className="col-sm-3 py-2">{typo}</div>
-                    );
-            }) : null}</div></div>);
+        return (<TypoError message={props.output}/>);
     }
 }

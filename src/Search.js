@@ -49,7 +49,7 @@ export default function Search() {
         <div className="container my-5 py-3">
             <h1 className="my-2">D:ct:onary</h1>
             <form onSubmit={handleSubmit} className="my-3">
-                <input type="text" placeholder="Type the word..." autoFocus onChange={handleWordChange}/>
+                <input type="text" placeholder="Type the word..." onChange={handleWordChange} className="searchInput m-4"/>
                 <input type="submit" value="Search"/>
             </form>
             <div> 

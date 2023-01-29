@@ -1,0 +1,6 @@
+.searchInput {
+    border: inherit;
+    background-color: inherit;
+    border-block-end: 2px solid #000;
+    max-width: 30%;
+}
