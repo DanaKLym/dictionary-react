@@ -1,0 +1,18 @@
+.keyword, .headword {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+.keyword {
+    color: #fc0b57;
+    font-size: 36px;
+}
+
+.headword {
+    font-size: 32px;
+}
+
+.transcription {
+    font-family: 'Tinos', serif;
+    font-size: 26px;
+}

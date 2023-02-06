@@ -3,7 +3,9 @@ import Meaning from "./Meanings";
 import Warning from "./Warning";
 import Pronunciation from "./Pronunciation";
 import Transcription from "./Transcription";
+import PartOfSpeech from "./PartofSpeech";
 import TypoError from "./TypoError";
+import "./Output.css";
 
 
 export default function Output(props) {
@@ -12,9 +14,9 @@ export default function Output(props) {
         <h2>Opps, something went wrong, please, type the word again</h2>);
     } else if (props.output[0].meta) {
         return (
-            <div className="output">
-                <h2>{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
-                <div className="d-flex">
+            <div className="output p-3">
+                <h2 className="keyword">{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
+                <div className="d-flex justify-content-center flex-column">
                 <Pronunciation pronunciation={props.output} />
                 <Transcription transcription={props.output} />
                 </div>
@@ -22,10 +24,9 @@ export default function Output(props) {
                 {props.output.map(function(description, index) {
                     return (
                         <div key={index}>
-                            <h3 className="headword">{description.hwi.hw.replaceAll("*", "·")}</h3>
                             <div className="row">
                             <div className="col-6 text-start">
-                            <div className="partOfSpeech"><strong><em>({description.fl})</em></strong></div>
+                            <PartOfSpeech description={description}/>
                             </div>
                             <div className="col-6">
                             <Warning offensive={description} />

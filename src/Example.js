@@ -9,8 +9,7 @@ export default function Example(props) {
                     <strong>Example:</strong>
                 {props.example.quotes.map(function(quotes, index) {
                 return (
-                    <div key={index}>
-                    <br/>
+                    <div key={index} className="quotes my-2">
                         {quotes.t.replace(`{qword}`, ``).replace(`{/qword}`, ``)}
                     </div>
                         );

@@ -1,6 +1,17 @@
 .searchInput {
     border: inherit;
     background-color: inherit;
-    border-block-end: 2px solid #000;
+    border-block-end: 1px solid #000;
     max-width: 30%;
+    transition: all 300ms ease-in-out;
+}
+
+.searchInput:focus {
+   outline: none;
+   caret-color: rgb(17, 87, 64);
+}
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 4vw !important;
 }
