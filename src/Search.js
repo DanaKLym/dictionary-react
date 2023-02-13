@@ -46,11 +46,11 @@ export default function Search() {
     }
 
     return (
-        <div className="container my-5 py-3">
+        <div className="container mt-5 py-3">
             <h1 className="my-2">Dictionary</h1>
             <form onSubmit={handleSubmit} className="my-3">
                 <input type="text" placeholder="Type the word..." onChange={handleWordChange} className="searchInput m-4"/>
-                <input type="submit" value="Search"/>
+                <input type="submit" value="Search" className="searchButton"/>
             </form>
             <div> 
                {definition != null ?  <Output output={definition} /> : " "}

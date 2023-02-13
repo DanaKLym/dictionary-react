@@ -1,11 +1,11 @@
 .definition {
-    font-family: 'EB Garamond', serif;
+    font-family: var(--secondary-font);;
     font-size: 26px;
 }
 
 .quotes {
     color: rgba(53, 61, 61, 0.689);
     font-size: 21px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--primary-font);
     font-style: italic;
 }

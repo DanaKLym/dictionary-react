@@ -1,5 +1,5 @@
 .keyword, .headword {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--primary-font);
     font-weight: 700;
 }
 

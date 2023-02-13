@@ -3,7 +3,9 @@
     background-color: inherit;
     border-block-end: 1px solid #000;
     max-width: 30%;
-    transition: all 300ms ease-in-out;
+    font-family: var(--secondary-font);
+    font-size: 21px;
+    transition: var(--transition);
 }
 
 .searchInput:focus {
@@ -11,7 +13,20 @@
    caret-color: rgb(17, 87, 64);
 }
 
+.searchButton {
+    border: inherit;
+    background: inherit;
+    transition: var(--transition);
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.searchButton:hover {
+    color: #fc0b57;
+}
+
 h1 {
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 4vw !important;
+    font-size: 5vw !important;
 }
