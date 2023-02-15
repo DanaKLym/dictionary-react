@@ -1,0 +1,7 @@
+.photoGrid {
+    transition: var(--transition);
+}
+
+.photoGrid:hover {
+    scale: 110%;
+}

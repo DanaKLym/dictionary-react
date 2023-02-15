@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  background-color: #e2e2e2;
+  background-image: url(./pics/background.svg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .App-logo {

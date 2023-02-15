@@ -14,8 +14,8 @@ export default function Output(props) {
         <h2>Opps, something went wrong, please, type the word again</h2>);
     } else if (props.output[0].meta) {
         return (
-            <div className="output p-3">
-                <h2 className="keyword">{props.output[0].meta.id.toUpperCase().split(":1")}</h2>
+            <div className="Output p-3">
+                <h2 className="keyword">{props.output[0].meta.id.toUpperCase().split(":")[0].split(":")}</h2>
                 <div className="d-flex justify-content-center flex-column">
                 <Pronunciation pronunciation={props.output} />
                 <Transcription transcription={props.output} />

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
 import Photos from "./Photos";
+import Footer from "./Footer";
 import "./Search.css"
 
 export default function Search() {
@@ -47,6 +48,7 @@ export default function Search() {
 
     return (
         <div className="container mt-5 py-3">
+            <section className="p-4">
             <h1 className="my-2">Dictionary</h1>
             <form onSubmit={handleSubmit} className="my-3">
                 <input type="text" placeholder="Type the word..." onChange={handleWordChange} className="searchInput m-4"/>
@@ -56,6 +58,8 @@ export default function Search() {
                {definition != null ?  <Output output={definition} /> : " "}
             </div>
             <Photos photos={photos} />
+            </section>
+            <Footer />
         </div>
     );
 }

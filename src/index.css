@@ -4,6 +4,12 @@
   --secondary-font: 'EB Garamond', serif;
 }
 
+html {
+  background-image: url(./pics/background.svg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,6 +19,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  background-color: #e2e2e2;
-}
