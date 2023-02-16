@@ -11,7 +11,7 @@ import "./Output.css";
 export default function Output(props) {
     if (props.output.length <= 0) {
         return (
-        <h2>Opps, something went wrong, please, type the word again</h2>);
+        <h3 className="errorMessage">Opps, something went wrong, please, type the word again</h3>);
     } else if (props.output[0].meta) {
         return (
             <div className="Output p-3">
