@@ -1,3 +1,7 @@
+.photoSelection {
+    margin: 0 auto;
+}
+
 .photoGrid {
     transition: var(--transition);
 }
