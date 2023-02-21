@@ -5,4 +5,32 @@
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     font-family: 'Tinos', serif;
+    color: #41011f;
+}
+
+.Warning::before {
+    content: '⚠️ ';
+}
+
+@media (max-width: 768px) {
+    .Warning {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .Warning {
+        font-size: 14px;
+        visibility: hidden;
+    }
+    
+    .Warning::before {
+        content: 'Offensive';
+        visibility: visible;
+        padding: 10px;
+        background: rgba(180, 1, 1, 0.25);
+        border-radius: 5px;
+        color: #41011f;
+    }
 }

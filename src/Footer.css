@@ -12,3 +12,9 @@
     color:black;
     text-shadow: 1px 2px 3px #a4a2a2;
 }
+
+@media (max-width: 768px) {
+    .Footer {
+        font-size: 12px;
+    }
+}

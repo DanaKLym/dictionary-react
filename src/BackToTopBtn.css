@@ -1,8 +1,8 @@
 .backToTop {
     position: fixed;
     bottom: 60px;
-    right: 150px;
-    background: #e5a5fd;
+    right: 110px;
+    background: rgba(204, 67, 254, 0.6);
     color: #fff;
     font-size: 30px;
     font-family: var(--primary-font);
@@ -16,5 +16,13 @@
 
 .backToTop:hover {
     transform: scale(1.2);
-    background: rgba(204, 67, 254, 0.6);
+    background: #e5a5fd;
+}
+
+@media (max-width: 992px) {
+    .backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 50px;
+    }
 }

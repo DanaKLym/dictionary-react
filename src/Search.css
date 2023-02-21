@@ -43,3 +43,13 @@ h1 {
     font-family: 'Lostar';
     src: url("./fonts/Lostar.ttf");
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 41px !important;
+    }
+
+    .searchInput {
+        font-size: 18px;
+    }
+}
