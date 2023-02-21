@@ -4,8 +4,7 @@ export default function Example(props) {
 
      if (props.example.quotes) {
             return (
-                <div>
-                    <br/> 
+                <div className="mt-3">
                     <strong>Example:</strong>
                 {props.example.quotes.map(function(quotes, index) {
                 return (

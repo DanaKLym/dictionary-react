@@ -31,13 +31,15 @@ section {
 }
 
 h1 {
-    font-family: 'Vince', 'Cinzel Decorative', cursive;
-    font-size: 5vw !important;
-    color: #073500;
+    font-family: 'Lostar', 'Cinzel Decorative', cursive;
+    font-size: 5.5vw !important;
+    background: -webkit-linear-gradient(0.2turn, #f6f7f6, #2d003c, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-transform: uppercase;
 }
 
 @font-face {
-    font-family: 'Vince';
-    src: url("./fonts/Vince-Demo.ttf");
+    font-family: 'Lostar';
+    src: url("./fonts/Lostar.ttf");
 }

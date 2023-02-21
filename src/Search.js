@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
 import Photos from "./Photos";
+import BackToTopBtn from "./BackToTopBtn";
 import Footer from "./Footer";
 import "./Search.css"
 
@@ -60,6 +61,7 @@ export default function Search() {
             <Photos photos={photos} />
             </section>
             <Footer />
+            <BackToTopBtn />
         </div>
     );
 }

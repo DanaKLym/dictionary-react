@@ -1,0 +1,20 @@
+.backToTop {
+    position: fixed;
+    bottom: 60px;
+    right: 150px;
+    background: #e5a5fd;
+    color: #fff;
+    font-size: 30px;
+    font-family: var(--primary-font);
+    font-weight: 700;
+    height: 60px;
+    width: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.backToTop:hover {
+    transform: scale(1.2);
+    background: rgba(204, 67, 254, 0.6);
+}
