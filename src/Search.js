@@ -49,8 +49,8 @@ export default function Search() {
 
     return (
         <div className="container mt-5 py-3">
-            <section className="p-4">       
-                <h1 className="my-2">dictionary</h1>
+            <section className="p-4">
+                <h1 className="my-2 tracking-in-expand">Spring up</h1>
             <form onSubmit={handleSubmit} className="my-3">
                 <input type="text" placeholder="Type the word..." onChange={handleWordChange} className="searchInput m-4"/>
                 <input type="submit" value="Search" className="searchButton"/>

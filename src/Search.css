@@ -31,17 +31,22 @@ section {
 }
 
 h1 {
-    font-family: 'Lostar', 'Cinzel Decorative', cursive;
-    font-size: 5.5vw !important;
-    background: -webkit-linear-gradient(0.2turn, #f6f7f6, #2d003c, #fff);
+    font-family: 'Leafy Regular', 'Cinzel Decorative', cursive;
+    font-size: 7vw !important;
+    background: radial-gradient(circle at 10% 20%, rgb(85, 149, 27) 0.1%, rgb(183, 219, 87) 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
+    -webkit-text-stroke: 1px #104800;
 }
 
 @font-face {
     font-family: 'Lostar';
     src: url("./fonts/Lostar.ttf");
+}
+
+@font-face {
+    font-family: 'Leafy Regular';
+    src: url("./fonts/Leafy-Regular.ttf");
 }
 
 @media (max-width: 768px) {
@@ -53,3 +58,20 @@ h1 {
         font-size: 18px;
     }
 }
+
+.tracking-in-expand {
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
