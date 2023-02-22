@@ -40,11 +40,6 @@ h1 {
 }
 
 @font-face {
-    font-family: 'Lostar';
-    src: url("./fonts/Lostar.ttf");
-}
-
-@font-face {
     font-family: 'Leafy Regular';
     src: url("./fonts/Leafy-Regular.ttf");
 }
@@ -52,6 +47,7 @@ h1 {
 @media (max-width: 768px) {
     h1 {
         font-size: 41px !important;
+        -webkit-text-stroke: 0.6px #104800;
     }
 
     .searchInput {

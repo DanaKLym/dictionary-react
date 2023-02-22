@@ -1,5 +1,3 @@
-// {definition != null ?  <Output output={definition} /> : " "}
-
 import React, { useState } from "react";
 import axios from "axios";
 import Output from "./Output";
@@ -15,7 +13,6 @@ export default function Search() {
     const [photos, setPhotos] = useState(null);
 
     function handleResponse(response) {
-        console.log(response.data);
         setDefinition(response.data)
     }
 
@@ -26,12 +23,13 @@ export default function Search() {
     }
 
     function handlePexelsResponse(response) {
-        setPhotos(response.data.photos)
+        setPhotos(response.data.photos);
+        console.log(response);
     }
 
     function handlePhotos() {
         let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
-        let pexelsApiKey = `563492ad6f91700001000001bc5440db709f491fb84aa5d279e748d5`;
+        let pexelsApiKey = `563492ad6f91700001000001bc1878da3ccc4a229c4cf2524dd22df8`;
         let headers = { Authorization: `Bearer ${pexelsApiKey}` };
 
         axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);

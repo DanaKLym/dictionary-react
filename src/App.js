@@ -1,4 +1,3 @@
-
 import './App.css';
 import Search from "./Search.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
