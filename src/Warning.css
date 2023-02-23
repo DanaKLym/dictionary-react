@@ -34,8 +34,3 @@
         color: #41011f;
     }
 }
-
-.scale-up-center {
-	-webkit-animation: scale-up-center 0.5s ease-in-out both;
-	        animation: scale-up-center 0.5s ease-in-out both;
-}

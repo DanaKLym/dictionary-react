@@ -15,6 +15,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.5s ease-in-out both;
+	        animation: scale-up-center 0.5s ease-in-out both;
+}
+
 @-webkit-keyframes scale-up-center {
   0% {
     -webkit-transform: scale(0.5);
